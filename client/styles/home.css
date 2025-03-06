@@ -1,0 +1,43 @@
+.home-container{
+    
+}
+
+.home-view{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 20%;
+}
+
+.home-menu{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80%;
+    bottom: 0;
+    background: var(--nav);
+    padding: 9px;
+}
+
+.home-view-targeting-panels{
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    bottom: 60%;
+    overflow-y: auto;
+    right: 72%;
+}
+
+@media screen and (max-width: 768px) {
+    .home-view-targeting-panels{
+        right: 54%;
+    }
+}
+
+.panel {
+    border-radius: 9px;
+    border: 3px solid var(--light);
+    padding: 9px;
+    margin: 9px;
+}

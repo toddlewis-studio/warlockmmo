@@ -1,0 +1,8 @@
+.user-panel {
+    border: 1px solid var(--luminate);
+    padding: 9px;
+    margin: 9px;
+    border-radius: 9px;
+    display: inline-flex;
+    flex-direction: column;
+}

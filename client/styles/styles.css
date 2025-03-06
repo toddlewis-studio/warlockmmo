@@ -1,0 +1,115 @@
+@import url("./nav.css");
+@import url("./store-card.css");
+@import url("./shake.css");
+
+:root{
+    --bg: rgb(66, 66, 66);
+    --black: rgb(6, 6, 6);
+    --nav: rgba(66, 36, 36);
+    --luminate: rgba(255,255,255,0.66);
+    --light: rgba(255,255,255,0.3666);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 9px;
+    position: fixed;
+    bottom: 0;
+    top: 54px;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    background: var(--black);
+    margin: 9px;
+    border-radius: 9px;
+    color: var(--luminate);
+}
+
+/* mobile screens */
+@media screen and (max-width: 768px) {
+    main {
+        bottom: 54px;
+        top: 0;
+    }
+}
+
+html {
+    background-color: var(--bg);
+}
+
+.header {
+    padding: 18px;
+    margin: 0 -9px;
+    border-bottom: 3px solid var(--luminate);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 9px;
+    background-color: var(--nav);
+    color: var(--luminate);
+    border-radius: 9px;
+    margin: 9px;
+}
+
+form button, form input {
+    background-color: var(--light);
+    color: var(--luminate);
+    border: none;
+    border-radius: 9px;
+    transition: 0.3s;
+    margin: 9px 3px;
+    cursor: pointer;
+}
+
+form input {
+    padding: 6px;
+    padding-left: 9px;
+    border-radius: 3px;
+    font-size: larger;
+    font-weight: bold;
+    color: var(--luminate);
+    text-decoration: underline;
+}
+
+form button:hover {
+    background-color: var(--luminate);
+}
+
+form input:hover, form input:active, form input:focus{
+    background-color: white;
+    color: var(--black);
+}
+
+form input:active, form input:focus{
+    text-decoration: none;
+}
+
+form label {
+    font-weight: bold;
+}
+
+.larger {
+    font-size: larger;
+}
+
+.smaller {
+    font-size: smaller;
+}
+
+hr {
+    width: 100%;
+    border: 3px solid var(--luminate);
+    border-radius: 9px;
+    margin: 9px 0;
+}

@@ -1,4 +1,5 @@
 const FB = require('./firebase');
+const gameService = require('./game')
 
 const getUser = async (id) => {
     console.log('getUser', id)
@@ -10,17 +11,20 @@ const getUser = async (id) => {
 
 const init = async (id, username) => {
     console.log('init', username)
+    const location = gameService.state().starterZone
+    if(!location) throw {error: 'GameNotRunning', message: "The game isn't initialized"}
     const user = {
         username,
         inventory: [],
-        location: {
-            zone: 'starter',
-            node: 'camp',
-        },
+        equip: [],
+        gold: 0,
+        spirit: 0,
+        experience: 0,
+        location,
     }
 
     const checkUser = await getUser(id);
-    if(checkUser) return {error: 'UserFoundError', message: 'Cannot init a user when a user already exists'}
+    if(checkUser) throw {error: 'UserFoundError', message: 'Cannot init a user when a user already exists'}
 
     const userRef = new FB(`user/${id}`)
     await userRef.push(user)

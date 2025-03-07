@@ -5,14 +5,12 @@ const userService = require('../../services/user');
 
 // Welcome route
 router.post('/', async (req, res) => {
-    const user = await userService.init(req.body.id, req.body.username);
-    if(user)
+    try{
+        const user = await userService.init(req.body.id, req.body.username);
         res.json(user)
-    else
-        res.status(500).json({
-            error: 'UserInitError',
-            message: 'Error initializing user'
-        });
+    } catch (error) {
+        res.status(500).json(error)
+    }
 });
 
 module.exports = router;

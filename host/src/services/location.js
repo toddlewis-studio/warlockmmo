@@ -41,7 +41,7 @@ const generateTerritory = (tier = 1) => {
         await camp2Ref.save()
     }
 
-    return {territory, tavern: tavern.id, save}
+    return {territory, tavernId: tavern.id, save}
 }
 
 const NODE_TYPE = {
@@ -77,11 +77,11 @@ const initGameMap = async () => {
         territoryRes.save()
         starterZoneRef.push({
             territory: territoryRes.territory.id, 
-            node: territoryRes.tavern
+            node: territoryRes.tavernId
         })
     }
 
-    return save
+    return {save}
 }
 
 module.exports = {

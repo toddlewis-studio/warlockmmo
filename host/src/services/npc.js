@@ -13,5 +13,5 @@ const generateNPC = (location, action, existingNpcs) => {
 }
 
 module.exports = {
-    generateNPC, generateName
+    generateNPC
 }

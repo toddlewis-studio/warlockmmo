@@ -44,6 +44,16 @@ app.use((req, res) => {
 
 const PORT = 3001;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+const gameService = require('./services/game')
+;(async () => {
+  await gameService.loadGameState()
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+    console.log(gameService.state())
+  });
+})()
+
+// ;(async () => {
+//   const res = await gameService.initGame()
+//   console.log(res)
+// })()

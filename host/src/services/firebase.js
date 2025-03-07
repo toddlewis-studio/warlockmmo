@@ -33,6 +33,18 @@ class FirebaseService {
     }
   }
 
+  // Create a new record without saving
+  createUnsaved(data) {
+    try {
+      const newRef = this.ref.push();
+      data.id = newRef.key
+      return { save: () => newRef.set(data), data };
+    } catch (error) {
+      console.error('Error creating record:', error);
+      throw error;
+    }
+  }
+
   // Read a single record by ID
   async getById(id) {
     try {
@@ -116,6 +128,16 @@ class FirebaseService {
         : [];
     } catch (error) {
       console.error('Error querying records:', error);
+      throw error;
+    }
+  }
+  // Check if reference path is empty
+  async isEmpty() {
+    try {
+      const snapshot = await this.ref.once('value');
+      return !snapshot.exists();
+    } catch (error) {
+      console.error('Error checking if empty:', error);
       throw error;
     }
   }

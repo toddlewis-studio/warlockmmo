@@ -17,10 +17,12 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 // Import routes
 const getuserRouter = require('./routes/api/getuser');
 const inituserRouter = require('./routes/api/inituser');
+const getlocationRouter = require('./routes/api/getlocation');
 
 // Public routes
 app.use('/api/getuser', getuserRouter);
 app.use('/api/inituser', inituserRouter);
+app.use('/api/getlocation', getlocationRouter);
 
 // Protected routes - Apply auth middleware
 app.use('/api', validateFirebaseToken);

@@ -1,5 +1,4 @@
 import Page from '../services/page.js'
-import userService from '../services/user.js'
 import Nav from '../tags/nav.js'
 import Craft from './craft.js'
 
@@ -25,8 +24,6 @@ export default new Page( 'inventory',
         </main>
     `,
     async div => {
-        const user = userService.getCurrentUser();
-
         div.querySelector('#craft').addEventListener('click', () => Craft.start())
 
         Nav.load(div, nav.id)

@@ -18,7 +18,6 @@ export default new Page( 'craft',
         </main>
     `,
     async div => {
-        const user = userService.getCurrentUser();
 
         div.querySelector('#inventory').addEventListener('click', () => Inventory.start())
 

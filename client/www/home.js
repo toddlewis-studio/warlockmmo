@@ -1,10 +1,13 @@
 import Page from '../services/page.js'
 import userService from '../services/user.js'
-import Nav from '../tags/nav.js'
-import UserPanel from '../tags/user-panel.js'
 
-let nav = Nav.place()
-let userpanel = UserPanel.place()
+import tag from '../tags.js'
+
+import gameState from '../services/game-state.js'
+
+let nav = tag.Nav.place()
+let userpanel = tag.UserPanel.place()
+let targetpanel = tag.TargetPanel.place()
 
 export default new Page( 'home',
     'Home',
@@ -12,21 +15,7 @@ export default new Page( 'home',
         ${nav.html}
         <main>
             <div class="home-container">
-                <div class="home-view">
-                    <div class="home-view-targeting-panels">
-                        <div class="panel">
-                            <b class="larger">Demons</b>
-                        </div>
-                        <div class="panel">
-                            <b class="larger">Party</b>
-                        </div>
-                        <div class="panel">
-                            <b class="larger">Warlocks</b>
-                        </div>
-                        <div class="panel">
-                            <b class="larger">Monsters</b>
-                        </div>
-                    </div>
+                <div class="home-view" id="view">
                 </div>
                 <div class="home-menu">
                     ${userpanel.html}
@@ -38,12 +27,18 @@ export default new Page( 'home',
         </main>
     `,
     async div => {
-        const user = userService.getCurrentUser();
+        const state = gameState.get()
+        const user = state.user
         if (user) {
-            UserPanel.load(div, userpanel.id, user)
+            tag.UserPanel.load(div, userpanel.id, user)
+        }
+        if(state.location && state.location.node.type != 'tavern') {
+            div.querySelector(`#view`).appendChild(
+                tag.TargetPanel.clone()
+            )
         }
 
-        Nav.load(div, nav.id)
-        Nav.tabactive('home')
+        tag.Nav.load(div, nav.id)
+        tag.Nav.tabactive('home')
     }
 )

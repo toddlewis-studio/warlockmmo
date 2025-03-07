@@ -18,7 +18,7 @@ export default new Page( 'newUser',
         </main>
     `,
     async div => {
-        const user = userService.getCurrentUser();
+        const user = userService.currentUser;
         if (user) {
             div.querySelector('#email').innerText = user.email;
         }

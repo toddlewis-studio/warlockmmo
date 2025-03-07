@@ -3,13 +3,10 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, setPe
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 
 import routes from '../routes.js'
+import gameState from './game-state.js'
 
 class UserService {
     constructor() {
-        if (UserService.instance) {
-            return UserService.instance;
-        }
-
         // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDSPcHyBLUnGAgzTWNJRFiIx2AckHDVJcs",
@@ -32,9 +29,7 @@ class UserService {
 
         // Enable persistent auth state
         setPersistence(this.auth, browserLocalPersistence)
-            .catch((error) => {
-                console.error('Auth persistence error:', error);
-            });
+            .catch(error => console.error('Auth persistence error:', error))
 
         // Set up auth state listener
         onAuthStateChanged(this.auth, (user) => {
@@ -42,19 +37,23 @@ class UserService {
             this.onAuthStateChange(user);
         });
 
-        UserService.instance = this;
         this.initializedUser = false
     }
 
     // Callback for auth state changes
-    onAuthStateChange(user) {
+    async onAuthStateChange(user) {
         // Dispatch a custom event when auth state changes
         const event = new CustomEvent('authStateChanged', { 
             detail: { user } 
         });
         window.dispatchEvent(event);
         console.log('auth token loaded')
-        this.reloadUser()
+        try {
+            await this.reloadUser()
+            await this.getLocation()
+        } catch(e){
+            console.error(e)
+        }
     }
 
     // Sign in with Google
@@ -76,11 +75,6 @@ class UserService {
             console.error('Sign-out error:', error);
             throw error;
         }
-    }
-
-    // Get current user
-    getCurrentUser() {
-        return this.data;
     }
 
     // Check if user is authenticated
@@ -136,12 +130,12 @@ class UserService {
         const id = this.currentUser.uid;
         try {
             const res = await this.apiFetch('api/getuser', {id})
-            console.log(res)
-            this.data = res
-            if(window.currentRoute) routes[window.currentRoute].start()
-            return this.data
+            console.log('reload user', res)
+            gameState.set({userId: id, user: res})
+            window.restartRoute()
         } catch (error) {
             routes.newUser.start()
+            throw error
         }
     }
 
@@ -149,10 +143,27 @@ class UserService {
         const id = this.currentUser.uid
         try {
             const res = await this.apiFetch('api/inituser', {id, username})
-            console.log(res)
-            this.data = res.user
+            console.log('init user', res)
+            gameState.set({userId: id, user: res.user})
+            await this.getLocation()
             routes.home.start()
         } catch (error) {
+            throw error
+        }
+    }
+
+    async getLocation() {
+        const location = gameState.get().user.location
+        try {
+            const res = await this.apiFetch('api/getlocation', {
+                territoryId: location.territory,
+                nodeId: location.node
+            })
+            console.log('location', res)
+            gameState.set({location: res})
+            window.restartRoute()
+        } catch (error) {
+            throw error
         }
     }
 }

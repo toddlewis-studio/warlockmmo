@@ -7,6 +7,7 @@ export default class {
     }
     async start(div) {
         window.currentRoute = this.route
+        window.restartRoute = () => this.start()
         document.title = `Warlock MMO | ${this.title}`
         if(!div) div = document.querySelector('#app')
         div.innerHTML = this.html

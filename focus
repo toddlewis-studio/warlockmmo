@@ -1,0 +1,103 @@
+- Map Panel
+    Create a panel that shows the map on the homepage.
+    Panel should have high z-index priority.
+
+- Travel Nodes
+    Connect Nodes in the database
+    Calculate time to travel to each node (3 seconds for tavern, 6 seconds for non-tavern)
+
+- Stat System
+    Create a combat stats system for users in combat
+
+- Item System
+    Create items
+
+- Starter Kit
+    Create starter kits and add them to the store
+
+- Crafting System
+    Flesh out the crafting page to allow crafting equipment
+
+- Tavern View
+    Create a view for the tavern nodes.
+    View should include NPCs, Set Spawn, and Online Warlocks.
+
+- NPC Quest Panel
+    Create a panel that displays a quest description.
+    Quest should be acceptable.
+
+- NPC & Quest
+    Each NPCs is a unique quest giver.
+    Each NPC has a "lifespan" before despawning.
+    Once an NPC has despawn, all quests accepted will be removed from quest logs.
+    When a quest is accepted, add it to the quest log.
+
+- Questlog Panel
+    View accepted quests and track progress
+
+- Camp View
+    Create a view for camp nodes
+
+- Combat
+    Implement combat for camp nodes
+
+- Loot Panel
+    Create a panel for displaying rewards for killing enemies
+
+- Talent Tree System
+    Add talent trees to equipment
+    Add experience, leveling for a talent point, and infinite tier advanement
+
+- Smelt System
+    Melt items for reagents
+
+- Summoner System
+    Use a ritual reagent combination device to create demon phylactories
+    Demon phylactories are unequipable
+    Convert a phylactory into a demon by performing the summoning ritual
+    Summoning a demon requires reagents
+    Summoned demons require food and have a lifespan
+    Summoned demons slowly gain levels passively over time of being alive
+    Higher tier demons have increased lifespan and food reagent costs
+
+- Blacksmith System
+    Weapons are custom made with options of weapon type
+    Weapon type exaples: Scythe, Sword, Dagger, Wand, Staff, Axe, Mace, etc
+    Creating a weapon costs reagents
+    You can level weapons using reagents
+
+- Mask System
+    PVP rewards honor when getting kills
+    PVE rewards essence when getting kills
+    Essence is mob specific
+    Masks consume a random specific mob essence
+    The specific mob essence needed changes every 6 hours
+    Masks can always consume honor
+    Masks are dropped from bosses
+    Masks can be rewards for quests
+
+- Infinity Map
+    When a user's combined equip tier is higher than the highest tier node, a new location is generated
+    The new location will be a node in the highest tier territory with a small chance to be a new territory instead
+    The chance of the new location being a territory is increased based on the amount of nodes in the highest territory
+    A territory must have at least 6 nodes before a new territory has any chance to spawn
+    The max amount of Nodes a territory can have is 12
+    The new location's tier will be a tier of the user's combined equip tier + 1
+
+- Arena System
+    Enable user pvp
+
+- PVP Camp System
+    Enable camp pvp
+
+- Dungeon & Boss System
+    Create a system for dungeons
+    Dungeons act like territories with camps, pvp camps, and boss nodes
+
+- Seasons
+    Implement seasonal server resets
+
+- Polish for release
+    Refactor and build
+    Release for PC
+    Release for Android

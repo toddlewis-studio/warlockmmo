@@ -16,4 +16,9 @@ export default class {
         const placeholder = (div?div:document).querySelector(`#${id}`)
         placeholder.parentElement.replaceChild(clone, placeholder)
     }
+    clone(...params) {
+        const clone = this.template.content.cloneNode(true);
+        this.init(clone, ...params)
+        return clone
+    }
 }

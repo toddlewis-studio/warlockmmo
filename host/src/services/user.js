@@ -14,6 +14,7 @@ const init = async (id, username) => {
     const location = gameService.state().starterZone
     if(!location) throw {error: 'GameNotRunning', message: "The game isn't initialized"}
     const user = {
+        id,
         username,
         inventory: [],
         equip: [],

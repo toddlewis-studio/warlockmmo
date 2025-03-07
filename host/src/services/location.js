@@ -1,4 +1,5 @@
 const FB = require('./firebase')
+const game = require('./game')
 
 const namegen = require('./namegen')
 
@@ -84,6 +85,29 @@ const initGameMap = async () => {
     return {save}
 }
 
+const getLocation = async (territoryId, nodeId) => {
+    console.log(Object.keys(game))
+    let territory = game.state().territory[territoryId]
+    if(!territory) {
+        const ref = new FB(`game/territory/${territoryId}`)
+        territory = await ref.read()
+        game.editState(state => {
+            state.territory[territoryId] = territory
+            return state
+        })
+    }
+    let node = game.state().node[nodeId]
+    if(!node) {
+        const ref = new FB(`game/node/${nodeId}`)
+        node = await ref.read()
+        game.editState(state => {
+            state.node[nodeId] = node
+            return state
+        })
+    }
+    return {territory, node}
+}
+
 module.exports = {
-    initGameMap, generateTerritory
+    initGameMap, generateTerritory, getLocation
 }

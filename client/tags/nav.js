@@ -7,13 +7,14 @@ const Nav = new Tag(
         <button id="home">Home</button>
         <button id="inventory">Inventory</button>
         <button id="store">Store</button>
+        <button id="guide">Guide</button>
     </nav>
     `,
     async div => {
         const clearActive = () =>
             div.querySelectorAll('button').forEach(btn => btn.classList.remove('active'))
         
-        ;[['#home', routes.home], ['#store', routes.store], ['#inventory', routes.inventory]]
+        ;[['#home', routes.home], ['#store', routes.store], ['#inventory', routes.inventory], ['#guide', routes.guide]]
             .forEach(([id, route]) => {
                 div.querySelector(id).addEventListener('click', () =>
                     route.start(document.querySelector('#app'))

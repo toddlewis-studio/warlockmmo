@@ -1,6 +1,6 @@
 {
   "name": "warlockmmo-server",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Express server for Warlock MMO project",
   "main": "src/index.js",
   "scripts": {

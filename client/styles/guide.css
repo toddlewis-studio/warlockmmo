@@ -1,0 +1,42 @@
+.guide-article {
+    padding: 36px;
+}
+
+.guide-nav-article {
+    background: transparent;
+    text-decoration: underline;
+}
+
+.guide-nav-article:hover {
+    background: var(--light);
+    text-decoration: underline;
+}
+
+.guide-nav-article:active {
+    background: var(--luminate);
+    text-decoration: underline;
+}
+
+.guide-header {
+    display: flex;
+    align-items: center;
+}
+
+.guide-header button {
+    margin-right: 18px;
+}
+
+.article-date {
+    display: flex;
+    justify-content: right;
+}
+
+.guide-text {
+    line-height: 27px;
+}
+
+@media screen and (max-width: 768px) {
+    .guide-article{
+       padding: 27px;
+    }
+}

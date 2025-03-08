@@ -1,10 +1,14 @@
+import GuideNavSection from './tags/guide-nav-section.js'
 import Nav from './tags/nav.js'
+import OverNav from './tags/over-nav.js'
 import StoreCard from './tags/store-card.js'
 import TargetPanel from './tags/target-panel.js'
 import UserPanel from './tags/user-panel.js'
 
 export default {
+    GuideNavSection,
     Nav,
+    OverNav,
     StoreCard,
     TargetPanel,
     UserPanel

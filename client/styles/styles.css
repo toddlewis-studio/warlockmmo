@@ -1,3 +1,4 @@
+@import url("./color.css");
 @import url("./nav.css");
 @import url("./store-card.css");
 @import url("./shake.css");
@@ -5,14 +6,9 @@
 @import url("./user-panel.css");
 @import url("./guide.css");
 @import url("./overnav.css");
-
-:root{
-    --bg: rgb(66, 66, 66);
-    --black: rgb(6, 6, 6);
-    --nav: rgba(66, 36, 36);
-    --luminate: rgba(255,255,255,0.66);
-    --light: rgba(255,255,255,0.3666);
-}
+@import url("./tavern-view.css");
+@import url("./travel-map.css");
+@import url("./tooltip.css");
 
 html, body {
     margin: 0;
@@ -128,4 +124,22 @@ hr {
     align-items: center;
     justify-content: center;
     border-radius: 3px;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.j-center {
+    display: flex;
+    justify-content: center;
+}
+
+.j-center-inline {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.v-center {
+    align-items: center;
 }

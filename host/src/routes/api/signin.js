@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const locationService = require('../../services/location');
+const userService = require('../../services/user');
 
 // Welcome route
 router.post('/', async (req, res) => {
-    const location = await locationService.getLocation(req.body.territoryId, req.body.nodeId);
-    if(location)
-        res.json(location)
+    const user = await userService.signin(req.body.id);
+    if(user)
+        res.json(user)
     else
         res.status(500).json({
             error: 'UserNotFoundError',

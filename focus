@@ -1,11 +1,5 @@
-- Game Guide
-    Create a game guide to explain current functionality
-    Log each update in the game guide > updates
-    Start Erudite Artistry content creation and documentation
-
-- Map Panel
-    Create a panel that shows the map on the homepage.
-    Panel should have high z-index priority.
+- Map OverNav
+    Create a OverNav that shows the map on the homepage.
 
 - Travel Nodes
     Connect Nodes in the database
@@ -13,6 +7,14 @@
 
 - Stat System
     Create a combat stats system for users in combat
+    Physical, Magical, PhysicalResist, MagicalResist, Haste, CritChance, CritBoost, Health, Evasion
+    - Health increases max health
+    - Physical / Magical increase flat physical / magic damage
+    - PhysicalResist / MagicalResist decrease physical / magic damage
+    - Haste determines global cooldown speed
+    - CritChance determines chance to critical strike
+    - CritBoost increase critical strike damage
+    - Evasion increases change to dodge attacks
 
 - Item System
     Create items
@@ -45,13 +47,22 @@
 
 - Combat
     Implement combat for camp nodes
+    Enemies spawn 3 minutes after a camp is defeated
+    camps spawn with a number of mobs that scales with the number of players in
+    Attacking an enemy will cause you to become engaged with that enemy
+    Targeting party members with abilities will cause you to become engaged with all engaged enemies of target party member
+    Most enemy abilities target all engaged players
+    Enemy health is based on amount of players engaged
+    Enemy stats/damage is based on tier of camp
+    When an engaged enemy dies, player recieves loot that scales
 
 - Loot Panel
     Create a panel for displaying rewards for killing enemies
 
-- Talent Tree System
-    Add talent trees to equipment
-    Add experience, leveling for a talent point, and infinite tier advanement
+- Party
+    Players can join teams of players
+    Parties can have a max size of 6 players
+    Instagram notes style party chat
 
 - Smelt System
     Melt items for reagents
@@ -71,7 +82,7 @@
     Creating a weapon costs reagents
     You can level weapons using reagents
 
-- Mask System
+- Performer System
     PVP rewards honor when getting kills
     PVE rewards essence when getting kills
     Essence is mob specific
@@ -80,6 +91,10 @@
     Masks can always consume honor
     Masks are dropped from bosses
     Masks can be rewards for quests
+
+- Talent Tree System
+    Add talent trees to equipment
+    Add experience, leveling for a talent point, and infinite tier advanement
 
 - Infinity Map
     When a user's combined equip tier is higher than the highest tier node, a new location is generated
@@ -95,9 +110,11 @@
 - PVP Camp System
     Enable camp pvp
 
-- Dungeon & Boss System
-    Create a system for dungeons
-    Dungeons act like territories with camps, pvp camps, and boss nodes
+- Boss System
+    Create a system for bosses
+    
+- Pvp Boss System
+    Create a system for bosses with pvp enabled
 
 - Seasons
     Implement seasonal server resets

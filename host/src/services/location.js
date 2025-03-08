@@ -50,8 +50,8 @@ const NODE_TYPE = {
     TAVERN: 'tavern',
     PVPCAMP: 'pvpcamp',
     ARENA: 'arena',
-    DUNGEON: 'dungeon',
-    BOSS: 'boss'
+    BOSS: 'boss',
+    RAID: 'raid'
 }
 const generateNode = (territoryId, type, tier) => {
     let name;
@@ -108,6 +108,13 @@ const getLocation = async (territoryId, nodeId) => {
     return {territory, node}
 }
 
+const getWorld = () => {
+    let world = {territory: {}, node: {}}
+    world.territory = game.state().territory
+    world.node = game.state().node
+    return world
+}
+
 module.exports = {
-    initGameMap, generateTerritory, getLocation
+    initGameMap, generateTerritory, getLocation, getWorld
 }

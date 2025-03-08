@@ -20,7 +20,7 @@ export default new Page( 'home',
                 <div class="home-menu">
                     ${userpanel.html}
                     <div class="home-actions">
-                        <button>Map</button>
+                        <button id="travel">Travel</button>
                     </div>
                 </div>
             </div>
@@ -29,14 +29,23 @@ export default new Page( 'home',
     async div => {
         const state = gameState.get()
         const user = state.user
+        const location = gameState.getLocation()
         if (user) {
             tag.UserPanel.load(div, userpanel.id, user)
         }
-        if(state.location && state.location.node.type != 'tavern') {
-            div.querySelector(`#view`).appendChild(
-                tag.TargetPanel.clone()
-            )
+        if(location) {
+            if(location.node.type !== 'tavern')
+                div.querySelector(`#view`).appendChild(
+                    tag.TargetPanel.clone()
+                )
+            if(location.node.type === 'tavern')
+                div.querySelector(`#view`).appendChild(
+                    tag.TavernView.clone()
+                )
         }
+
+        div.querySelector('#travel')
+            .addEventListener('click', () => tag.TravelMap())
 
         tag.Nav.load(div, nav.id)
         tag.Nav.tabactive('home')

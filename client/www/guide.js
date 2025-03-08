@@ -47,7 +47,7 @@ export default new Page( 'guide',
             articleDiv.appendChild(text)
         })
 
-        // articleDiv.dispatchEvent(new CustomEvent( 'articleChange', articles.Updates[0] ))
+        articleDiv.dispatchEvent(new CustomEvent( 'articleChange', {detail: articles.Updates[0]} ))
 
         tag.Nav.load(div, nav.id)
         tag.Nav.tabactive('guide')

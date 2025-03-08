@@ -1,5 +1,6 @@
 const FB = require('./firebase');
 const gameService = require('./game')
+const locationService = require('./location');
 
 const getUser = async (id) => {
     console.log('getUser', id)
@@ -29,9 +30,17 @@ const init = async (id, username) => {
 
     const userRef = new FB(`user/${id}`)
     await userRef.push(user)
-    return {user, message: 'User initialized'}
+    const world = locationService.getWorld()
+    return {user, world}
+}
+
+const signin = async id => {
+    const userRef = new FB(`user/${id}`)
+    const user = await userRef.read()
+    const world = locationService.getWorld()
+    return {user, world}
 }
 
 module.exports = {
-    getUser, init
+    getUser, init, signin
 }

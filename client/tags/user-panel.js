@@ -12,7 +12,7 @@ export default new Tag(
     async (div) => {
         const state = gameState.get()
         const user = state.user
-        const location = state.location
+        const location = gameState.getLocation()
         if(user){
             div.querySelector('#username').innerText = user.username;
         }

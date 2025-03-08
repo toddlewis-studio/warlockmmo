@@ -1,0 +1,58 @@
+:root{
+    --bg: rgb(66, 66, 66);
+    --black: rgb(6, 6, 6);
+    --nav: rgba(66, 36, 36);
+    --luminate: rgba(255,255,255,0.666);
+    --luminate-r: rgba(255, 36, 36, 0.666);
+    --luminate-b: rgba(36, 36, 255, 0.666);
+    --luminate-p: rgba(110, 36, 110, 0.666);
+    --luminate-g: rgba(36, 255, 36, 0.666);
+    --light: rgba(255,255,255,0.3666);
+    --light-r: rgba(255, 36, 36, 0.3666);
+    --light-b: rgba(36, 36, 255, 0.3666);
+    --light-p: rgba(110, 36, 110, 0.3666);
+    --light-g: rgba(36, 255, 36, 0.3666);
+
+    --red: rgba(166, 36, 36);
+    --blue: rgba(36, 36, 166);
+    --green: rgba(36, 166, 36);
+    --purple: rgba(101, 36, 101);
+}
+
+/* Background color utility classes */
+.b-bg { background-color: var(--bg) !important; }
+.b-black { background-color: var(--black) !important; }
+.b-nav { background-color: var(--nav) !important; }
+.b-luminate { background-color: var(--luminate) !important; }
+.b-luminate-r { background-color: var(--luminate-r) !important; }
+.b-luminate-b { background-color: var(--luminate-b) !important; }
+.b-luminate-p { background-color: var(--luminate-p) !important; }
+.b-luminate-g { background-color: var(--luminate-g) !important; }
+.b-light { background-color: var(--light) !important; }
+.b-light-r { background-color: var(--light-r) !important; }
+.b-light-b { background-color: var(--light-b) !important; }
+.b-light-p { background-color: var(--light-p) !important; }
+.b-light-g { background-color: var(--light-g) !important; }
+.b-red { background-color: var(--red) !important; }
+.b-blue { background-color: var(--blue) !important; }
+.b-green { background-color: var(--green) !important; }
+.b-purple { background-color: var(--purple) !important; }
+
+/* Text color utility classes */
+.t-bg { color: var(--bg) !important; }
+.t-black { color: var(--black) !important; }
+.t-nav { color: var(--nav) !important; }
+.t-luminate { color: var(--luminate) !important; }
+.t-luminate-r { color: var(--luminate-r) !important; }
+.t-luminate-b { color: var(--luminate-b) !important; }
+.t-luminate-p { color: var(--luminate-p) !important; }
+.t-luminate-g { color: var(--luminate-g) !important; }
+.t-light { color: var(--light) !important; }
+.t-light-r { color: var(--light-r) !important; }
+.t-light-b { color: var(--light-b) !important; }
+.t-light-p { color: var(--light-p) !important; }
+.t-light-g { color: var(--light-g) !important; }
+.t-red { color: var(--red) !important; }
+.t-blue { color: var(--blue) !important; }
+.t-green { color: var(--green) !important; }
+.t-purple { color: var(--purple) !important; }

@@ -15,14 +15,12 @@ app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // Import routes
-const getuserRouter = require('./routes/api/getuser');
+const signinRouter = require('./routes/api/signin');
 const inituserRouter = require('./routes/api/inituser');
-const getlocationRouter = require('./routes/api/getlocation');
 
 // Public routes
-app.use('/api/getuser', getuserRouter);
+app.use('/api/signin', signinRouter);
 app.use('/api/inituser', inituserRouter);
-app.use('/api/getlocation', getlocationRouter);
 
 // Protected routes - Apply auth middleware
 app.use('/api', validateFirebaseToken);
@@ -44,18 +42,12 @@ app.use((req, res) => {
   });
 });
 
-const PORT = 3001;
-
-const gameService = require('./services/game')
 ;(async () => {
+  const gameService = require('./services/game')
   await gameService.loadGameState()
+  const PORT = 3001;
+  
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    console.log(gameService.state())
   });
 })()
-
-// ;(async () => {
-//   const res = await gameService.initGame()
-//   console.log(res)
-// })()

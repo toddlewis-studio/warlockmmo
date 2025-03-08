@@ -1,0 +1,31 @@
+.tavern-view {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    right: 30%;
+    padding: 9px 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .tavern-view {
+        left: 0;
+        right: 0;
+    }
+}
+
+.tavern-view > h1 {
+    margin-bottom: 6px;
+}
+
+.tavern-view button {
+    width: 100%;
+}
+
+.tavern-options {
+    position: absolute;
+    top: 81px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

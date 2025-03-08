@@ -50,7 +50,6 @@ class UserService {
         console.log('auth token loaded')
         try {
             await this.reloadUser()
-            await this.getLocation()
         } catch(e){
             console.error(e)
         }
@@ -129,9 +128,9 @@ class UserService {
     async reloadUser(){
         const id = this.currentUser.uid;
         try {
-            const res = await this.apiFetch('api/getuser', {id})
+            const res = await this.apiFetch('api/signin', {id})
             console.log('reload user', res)
-            gameState.set({userId: id, user: res})
+            gameState.set({userId: id, user: res.user, world: res.world})
             window.restartRoute()
         } catch (error) {
             routes.newUser.start()

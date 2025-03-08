@@ -56,7 +56,7 @@
     .overnav {
         right: 0 !important;
         top: 18%;
-        animation: open-overnav-mobile 0.3s;
+        animation: open-overnav-mobile 0.4s;
     }
     .overnav.death{
         top: 24%;

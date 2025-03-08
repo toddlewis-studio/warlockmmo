@@ -32,6 +32,16 @@ const loadGameState = async () => {
     if(state.exists){
         const starterZoneRef = new FB('game/startinfo')
         state.starterZone = await starterZoneRef.read()
+        const territoryRef = new FB('game/territory')
+        const territoryAr = await territoryRef.read()
+        Object.values(territoryAr).forEach(territory => {
+            state.territory[territory.id] = territory
+        })
+        const nodeRef = new FB('game/node')
+        const nodeAr = await nodeRef.read()
+        Object.values(nodeAr).forEach(node => {
+            state.node[node.id] = node
+        })
     } else resetState()
 }
 const editState = fn => state = fn(state)

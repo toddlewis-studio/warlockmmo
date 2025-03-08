@@ -41,3 +41,10 @@
     padding: 9px;
     margin: 9px;
 }
+
+.panel hr {
+    border: 2px solid var(--light);
+    border-radius: 0;
+    margin: 15px -9px;
+    width: calc(100% + 18px);
+}

@@ -1,3 +1,7 @@
++ Tavern View
+    Create a view for the tavern nodes.
+    View should include NPCs, Set Spawn, and Online Warlocks.
+
 - Map OverNav
     Create a OverNav that shows the map on the homepage.
 
@@ -18,29 +22,14 @@
 
 - Item System
     Create items
+    Demons, Weapons, Masks
+
+- Talent Tree System
+    Add talent trees to equipment
+    Add experience, leveling for a talent point, and infinite tier advanement
 
 - Starter Kit
     Create starter kits and add them to the store
-
-- Crafting System
-    Flesh out the crafting page to allow crafting equipment
-
-- Tavern View
-    Create a view for the tavern nodes.
-    View should include NPCs, Set Spawn, and Online Warlocks.
-
-- NPC Quest Panel
-    Create a panel that displays a quest description.
-    Quest should be acceptable.
-
-- NPC & Quest
-    Each NPCs is a unique quest giver.
-    Each NPC has a "lifespan" before despawning.
-    Once an NPC has despawn, all quests accepted will be removed from quest logs.
-    When a quest is accepted, add it to the quest log.
-
-- Questlog Panel
-    View accepted quests and track progress
 
 - Camp View
     Create a view for camp nodes
@@ -56,13 +45,36 @@
     Enemy stats/damage is based on tier of camp
     When an engaged enemy dies, player recieves loot that scales
 
+    update:
+        Combat system for pve works similarly to a damage training dummy
+        Damage dealt doesn't reduce health, instead it is used as a score that effect loot distribution
+        Enemies have a lifespan that increases slightly when a new player engages the enemy
+        Enemies have abilities and attack all players and occasionally use target higher damage dealing players with single target abilities
+
 - Loot Panel
     Create a panel for displaying rewards for killing enemies
+
+- NPC Quest Panel
+    Create a panel that displays a quest description.
+    Quest should be acceptable.
+
+- NPC & Quest
+    Each NPCs is a unique quest giver.
+    Each NPC has a "lifespan" before despawning.
+    Once an NPC has despawn, all quests accepted will be removed from quest logs.
+    When a quest is accepted, add it to the quest log.
+    Quests reward masks or reagents in exchange for a specific monster essence
+    Quests that reward reagents are repeatable
+
+- Questlog Panel
+    View accepted quests and track progress
 
 - Party
     Players can join teams of players
     Parties can have a max size of 6 players
-    Instagram notes style party chat
+
+- Chat
+    Players can talk in different chat rooms
 
 - Smelt System
     Melt items for reagents
@@ -92,9 +104,8 @@
     Masks are dropped from bosses
     Masks can be rewards for quests
 
-- Talent Tree System
-    Add talent trees to equipment
-    Add experience, leveling for a talent point, and infinite tier advanement
+- Crafting System
+    Flesh out the crafting page to allow crafting equipment
 
 - Infinity Map
     When a user's combined equip tier is higher than the highest tier node, a new location is generated
@@ -113,13 +124,39 @@
 - Boss System
     Create a system for bosses
     
-- Pvp Boss System
+- Raid System
     Create a system for bosses with pvp enabled
 
 - Seasons
     Implement seasonal server resets
 
+- Membership
+    $6.66 monthly membership
+    Get double loot rewards
+    Get daily, weekly, and monthly pack of reagents
+    Get double next season shift's smelt rewards
+    Get double inventory space
+    Get different color name
+    Member only chat features enabled
+
 - Polish for release
     Refactor and build
     Release for PC
     Release for Android
+
+- Discord x Twitter
+
+- Integrated NFTs
+    NFT items don't reset seasonally, but they require 100x experience to level
+    NFT items have experience banks where exp can be deposited, unlike normal items
+
+- Community generated NFT auction
+    Create a page for the community to submit art for the next NFT item added to the game
+    Users vote on the best submission
+    The top 6 submissions are minted and added to the game weekly
+    Selected submission grants chosen artist 33.3% commision
+
+- AI integration
+    Create AI tickets
+    Spend tickets to "talk" to npcs and summoned demons
+    Sell bundles of AI tickets for $12

@@ -2,6 +2,7 @@ import routes from './routes.js'
 import userService from '../services/user.js'
 
 const app = document.getElementById('app')
+window.appEl = app
 
 const init = async () => {
     await userService.checkLocalAuth()

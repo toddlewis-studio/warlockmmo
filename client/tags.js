@@ -5,6 +5,7 @@ import StoreCard from './tags/store-card.js'
 import TargetPanel from './tags/target-panel.js'
 import TavernView from './tags/tavern-view.js'
 import Tooltip from './tags/tooltip.js'
+import TravelMapGrid from './tags/travel-map-grid.js'
 import TravelMap from './tags/travel-map.js'
 import UserPanel from './tags/user-panel.js'
 
@@ -16,6 +17,7 @@ export default {
     TargetPanel,
     TavernView,
     Tooltip,
+    TravelMapGrid,
     TravelMap,
     UserPanel
 }

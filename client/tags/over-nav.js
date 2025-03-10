@@ -2,7 +2,7 @@ import Tag from '../services/tag.js'
 
 const overNav = new Tag(
     `
-    <div class="dark-screen" id="screen">
+    <div class="dark-screen overnav-el" id="screen">
         <div class="overnav" id="content"></div>
     </div>
     `,
@@ -28,7 +28,8 @@ overNav.open = fn => {
     const screen = clone.querySelector('#screen')
     const content = clone.querySelector('#content')
     fn(content, screen.closeNav)
-    document.querySelector('#app').appendChild(clone)
+    appEl.querySelectorAll('.overnav-el').forEach(el => el.closeNav())
+    appEl.appendChild(clone)
     setTimeout(() => content.classList.add('active'), 300)
     return clone
 }

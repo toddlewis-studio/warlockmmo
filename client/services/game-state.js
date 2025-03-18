@@ -11,7 +11,7 @@ const set = obj => Object.keys(obj).forEach(key => state[key] = obj[key])
 const edit = async fn => state = await fn()
 
 const getLocation = () => {
-    if(state.world){
+    if(state.user && state.world){
         const territory = state.world.territory[state.user.location.territory]
         const node = state.world.node[state.user.location.node]
         return {territory, node}

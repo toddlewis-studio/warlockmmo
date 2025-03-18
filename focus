@@ -130,7 +130,7 @@
 - Seasons
     Implement seasonal server resets
 
-- Membership
+- Membership - Google Appstore Integration
     $6.66 monthly membership
     Get double loot rewards
     Get daily, weekly, and monthly pack of reagents
@@ -138,6 +138,7 @@
     Get double inventory space
     Get different color name
     Member only chat features enabled
+    Deal 6% more damage
 
 - Polish for release
     Refactor and build
@@ -145,6 +146,16 @@
     Release for Android
 
 - Discord x Twitter
+
+- Editor
+    Create a content editor for WarlockMMO
+
+- Druid MMO Theme
+    Add editor functionality to create a theme
+    Create a theme system to change the names and color
+    Use the same database, but different url
+    Warlock MMO and Druid MMO are cross integrated
+    Release Druid MMO seperate on the app store
 
 - Integrated NFTs
     NFT items don't reset seasonally, but they require 100x experience to level
@@ -160,3 +171,6 @@
     Create AI tickets
     Spend tickets to "talk" to npcs and summoned demons
     Sell bundles of AI tickets for $12
+
+- Sales Powerpoint
+    Sell WarlockMMO+DruidMMO for $90 million

@@ -1,5 +1,6 @@
 const FB = require('./firebase');
 const gameService = require('./game')
+const itemService = require('./item')
 const locationService = require('./location');
 
 const getUser = async (id) => {
@@ -19,17 +20,23 @@ const init = async (id, username) => {
         username,
         inventory: [],
         equip: [],
-        gold: 0,
-        spirit: 0,
-        experience: 0,
+        currency: {
+            gold: 0,
+            spirit: 0,
+            experience: 0
+        },
         location,
     }
 
     const checkUser = await getUser(id);
     if(checkUser) throw {error: 'UserFoundError', message: 'Cannot init a user when a user already exists'}
-
+    let rapier = itemService.initStarterRapier()
+    rapier = await rapier.save()
+    user.equip.push(rapier.id)
+        
     const userRef = new FB(`user/${id}`)
     await userRef.push(user)
+
     const world = locationService.getWorld()
     return {user, world}
 }
@@ -37,6 +44,7 @@ const init = async (id, username) => {
 const signin = async id => {
     const userRef = new FB(`user/${id}`)
     const user = await userRef.read()
+    if(!user) return {error: "UserNotFound", message: "User not found"}
     const world = locationService.getWorld()
     return {user, world}
 }

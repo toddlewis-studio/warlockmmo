@@ -129,6 +129,7 @@ class UserService {
         const id = this.currentUser.uid;
         try {
             const res = await this.apiFetch('api/signin', {id})
+            if(res.error) throw res
             console.log('reload user', res)
             gameState.set({userId: id, user: res.user, world: res.world})
             window.restartRoute()

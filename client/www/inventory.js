@@ -1,6 +1,5 @@
 import Page from '../services/page.js'
 import Nav from '../tags/nav.js'
-import Craft from './craft.js'
 
 let nav = Nav.place()
 
@@ -10,8 +9,7 @@ export default new Page( 'inventory',
         ${nav.html}
         <main>
             <h1 class="header">
-                <span>Inventory</span>
-                <button id="craft">Craft</button>
+                <span>Bag</span>
             </h1>
             <div>
                 <div>
@@ -24,8 +22,6 @@ export default new Page( 'inventory',
         </main>
     `,
     async div => {
-        div.querySelector('#craft').addEventListener('click', () => Craft.start())
-
         Nav.load(div, nav.id)
         Nav.tabactive('inventory')
     }

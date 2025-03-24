@@ -4,9 +4,8 @@ import routes from '../routes.js'
 const Nav = new Tag(
     `
     <nav class="navbar">
-        <button id="home">Home</button>
-        <button id="inventory">Inventory</button>
-        <button id="store">Store</button>
+        <button id="home">Play</button>
+        <button id="inventory">Bag</button>
         <button id="guide">Guide</button>
     </nav>
     `,
@@ -14,7 +13,7 @@ const Nav = new Tag(
         const clearActive = () =>
             div.querySelectorAll('button').forEach(btn => btn.classList.remove('active'))
         
-        ;[['#home', routes.home], ['#store', routes.store], ['#inventory', routes.inventory], ['#guide', routes.guide]]
+        ;[['#home', routes.home], ['#inventory', routes.inventory], ['#guide', routes.guide]]
             .forEach(([id, route]) => {
                 div.querySelector(id).addEventListener('click', () =>
                     route.start(document.querySelector('#app'))

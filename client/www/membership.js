@@ -7,15 +7,16 @@ let nav = Nav.place()
 
 const newScoreCard = (name, desc, cost, storeId) => {return {name, desc, cost, storeId, ui: StoreCard.place()}}
 let storeCards = [
-    newScoreCard('300 Spirit', 'Currency used to purchase items', [[9, 'USD']], 'spirit300'),
+    newScoreCard('30 day', 'Get membership for 30 days', [[6.66, 'USD']], 'member30'),
+    newScoreCard('365 day', 'Get membership for 365 days\n(2 free months)', [[66.66, 'USD']], 'member365'),
 ]
 
-export default new Page( 'store',
-    'Store',
+export default new Page( 'membership',
+    'Membership',
     `
         ${nav.html}
         <main>
-            <h1 class="header">Store</h1>
+            <h1 class="header">Membership</h1>
             <div class="store-card-container">
                 ${storeCards.map(card => card.ui.html).join('')}
             </div>
@@ -24,6 +25,5 @@ export default new Page( 'store',
     async div => {
         storeCards.forEach(card => StoreCard.load(div, card.ui.id, card))
         Nav.load(div, nav.id)
-        Nav.tabactive('store')
     }
 )
